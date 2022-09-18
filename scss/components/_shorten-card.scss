@@ -1,0 +1,26 @@
+.shorten-card {
+  --flow-y: var(--spacing-4);
+  background-color: var(--clr-white);
+
+  > .container {
+    padding: var(--spacing-4);
+  }
+
+  .raw {
+    --clr-opacity: 0.2;
+    display: block;
+    padding: var(--card-padding);
+    font-size: var(--fs-base);
+    color: var(--clr-very-darkblue);
+  }
+
+  .url {
+    color: var(--clr-cyan);
+    display: block;
+    padding: var(--card-padding);
+  }
+
+  .copy-button {
+    display: block;
+  }
+}

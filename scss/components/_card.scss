@@ -1,0 +1,33 @@
+.card {
+  --flow-y: var(--spacing-3);
+  background-color: var(--clr-white);
+  padding-inline: var(--spacing-8);
+  padding-block-end: var(--spacing-12);
+  text-align: center;
+  position: relative;
+
+  > .title {
+    --flow-y: var(--spacing-8);
+    color: var(--clr-very-darkblue);
+    font-size: var(--fs-xl);
+    font-weight: bold;
+  }
+
+  > .description {
+    font-size: var(--fs-base);
+  }
+
+  > .image {
+    background-color: var(--clr-dark-violet);
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-block-end: -44px;
+  }
+}

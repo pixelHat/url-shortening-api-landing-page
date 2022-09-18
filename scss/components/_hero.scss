@@ -1,0 +1,8 @@
+.hero {
+  padding-block: var(--padding-block, var(--spacing-24));
+  text-align: center;
+  background-image: url(images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: 0 -1em;
+  background-size: cover;
+}

@@ -1,0 +1,13 @@
+.horizontal-list {
+  display: flex;
+  justify-content: center;
+  > .item + .item {
+    margin-inline-start: var(--spacing-6);
+  }
+  > .item {
+    cursor: pointer;
+  }
+  > .item:hover {
+    color: var(--clr-cyan);
+  }
+}

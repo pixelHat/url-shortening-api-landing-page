@@ -1,0 +1,26 @@
+.text-input {
+  $this: &;
+  border: none;
+  border-radius: 5px;
+  padding: var(--spacing-3) var(--spacing-4) var(--spacing-3);
+  color: var(--clr-very-darkblue);
+  &::placeholder {
+    color: var(--clr-very-darkblue);
+    opacity: 0.5;
+  }
+  + &--error {
+    display: none;
+    color: var(--clr-red);
+    font-size: var(--fs-xs);
+    font-style: italic;
+  }
+  &.error {
+    outline: 3px solid var(--clr-red);
+    &::placeholder {
+      color: var(--clr-red);
+    }
+    + #{$this}--error {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.footer-links {
+  > .small-spacing {
+    margin-block-start: var(--spacing-10);
+  }
+  > .big-spacing {
+    margin-block-start: var(--spacing-12);
+  }
+}

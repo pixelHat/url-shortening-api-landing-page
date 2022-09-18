@@ -1,0 +1,18 @@
+.button {
+  border: 0;
+  padding: var(--spacing-3) var(--spacing-10) var(--spacing-3);
+  border-radius: 5px;
+  background-color: var(--clr-cyan);
+  color: var(--clr-white);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-light-cyan);
+  }
+
+  &[data-active] {
+    background-color: var(--clr-dark-violet);
+  }
+}

@@ -1,0 +1,11 @@
+.advanced-statistics {
+  > .title {
+    font-size: var(--fs-3xl);
+    color: var(--clr-very-darkblue);
+  }
+  &-cards {
+    > * {
+      margin-block-start: var(--spacing-24);
+    }
+  }
+}

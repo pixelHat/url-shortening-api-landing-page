@@ -1,0 +1,6 @@
+.wrapper {
+  --max-width: 69.375rem;
+  --h-padding: var(--spacing-6);
+  width: min(var(--max-width), 100% - var(--h-padding) * 2);
+  margin-inline: auto;
+}

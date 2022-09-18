@@ -1,0 +1,24 @@
+.list-items {
+  > .title {
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: -0.014em;
+    color: var(--clr-white);
+  }
+  > .item {
+    font-size: 0.9375em;
+    line-height: 1.375;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: #bfbfbf;
+  }
+
+  > .title {
+    margin-block-end: var(--spacing-5);
+  }
+
+  > .item + .item {
+    margin-block-start: var(--spacing-3);
+  }
+}

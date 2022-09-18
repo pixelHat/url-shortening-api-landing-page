@@ -1,0 +1,294 @@
+@use "sass:map";
+@use "sass:color";
+@use "block";
+@use "flow";
+@use "wrapper";
+@use "stack";
+@use "background";
+@use "variants" as * with (
+  $breakpoints: (
+    "md": 375px,
+    "lg": 1440px,
+  )
+);
+
+$colors: (
+  "light-cyan": hsl(180, 56%, 75%),
+  "cyan": hsl(180, 66%, 49%),
+  "dark-violet": hsl(257, 27%, 26%),
+  "gray": hsl(0, 0%, 75%),
+  "light-gray": hsl(0, 0%, 95%),
+  "grayish-violet": hsl(257, 8%, 63%),
+  "very-darkblue": hsl(255, 11%, 21%),
+  "very-dark-violet": hsl(260, 8%, 14%),
+  "red": hsl(0, 87%, 67%),
+  "white": hsl(0, 0%, 100%, 1),
+  "black": hsl(257, 8%, 14%),
+);
+
+:root {
+  @each $key, $value in $colors {
+    --clr-#{$key}: #{$value};
+  }
+}
+
+.color {
+  @include options($colors, "responsive") using ($value) {
+    color: $value;
+  }
+}
+
+.bg {
+  @include options($colors, "responsive") using ($value) {
+    background-color: $value;
+  }
+}
+
+$text: (
+  "left": left,
+  "right": right,
+  "center": center,
+  "justify": justify,
+);
+
+.text {
+  @include options($text, "responsive") using ($value) {
+    text-align: $value;
+  }
+}
+
+$font-size: (
+  "xs": 0.75rem,
+  "sm": 0.875rem,
+  "base": 1rem,
+  "lg": 1.125rem,
+  "2lg": 1.25rem,
+  "xl": 1.375rem,
+  "2xl": 1.5rem,
+  "3xl": 1.875rem,
+  "4xl": 2.25rem,
+  "5xl": 3rem,
+  "6xl": 3.75rem,
+  "7xl": 4.5rem,
+  "8xl": 6rem,
+  "9xl": 8rem,
+);
+
+:root {
+  @each $key, $value in $font-size {
+    --fs-#{$key}: #{$value};
+  }
+}
+.text {
+  @include options($font-size, "responsive") using ($value) {
+    font-size: $value;
+  }
+}
+
+$font-weight: (
+  "medium": 500,
+  "bold": 700,
+) !default;
+
+.font {
+  @include options($font-weight, "responsive") using ($value) {
+    font-weight: $value;
+  }
+}
+
+$spacing: (
+  "px": 1px,
+  "0": 0,
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
+  "7": 1.75rem,
+  "8": 2rem,
+  "9": 2.25rem,
+  "10": 2.5rem,
+  "11": 2.75rem,
+  "12": 3rem,
+  "14": 3rem,
+  "16": 4rem,
+  "20": 5rem,
+  "24": 6rem,
+  "32": 8rem,
+  "40": 10rem,
+  "48": 12rem,
+  "56": 14rem,
+  "64": 16rem,
+);
+
+$margin: map.merge(
+  (
+    "auto": auto,
+    "half": "50%",
+  ),
+  $spacing
+);
+
+:root {
+  @each $key, $value in $spacing {
+    --spacing-#{$key}: #{$value};
+  }
+}
+
+@include variants("responsive") using ($props...) {
+  .p {
+    @include options($spacing, $props...) using ($value) {
+      padding: $value;
+    }
+  }
+
+  .px {
+    @include options($spacing, $props...) using ($value) {
+      padding-right: $value;
+      padding-left: $value;
+    }
+  }
+
+  .py {
+    @include options($spacing, $props...) using ($value) {
+      padding-bottom: $value;
+      padding-top: $value;
+    }
+  }
+
+  .pt {
+    @include options($spacing, $props...) using ($value) {
+      padding-top: $value;
+    }
+  }
+
+  .pr {
+    @include options($spacing, $props...) using ($value) {
+      padding-right: $value;
+    }
+  }
+
+  .pb {
+    @include options($spacing, $props...) using ($value) {
+      padding-bottom: $value;
+    }
+  }
+
+  .pl {
+    @include options($spacing, $props...) using ($value) {
+      padding-left: $value;
+    }
+  }
+
+  .m {
+    @include options($margin, $props...) using ($value) {
+      margin: $value;
+    }
+  }
+
+  .mx {
+    @include options($margin, $props...) using ($value) {
+      margin-right: $value;
+      margin-left: $value;
+    }
+  }
+
+  .my {
+    @include options($margin, $props...) using ($value) {
+      margin-bottom: $value;
+      margin-top: $value;
+    }
+  }
+
+  .mt {
+    @include options($margin, $props...) using ($value) {
+      margin-top: $value;
+    }
+  }
+
+  .mr {
+    @include options($margin, $props...) using ($value) {
+      margin-right: $value;
+    }
+  }
+
+  .mb {
+    @include options($margin, $props...) using ($value) {
+      margin-bottom: $value;
+    }
+  }
+
+  .ml {
+    @include options($margin, $props...) using ($value) {
+      margin-left: $value;
+    }
+  }
+
+  .-m {
+    @include options($spacing, $props...) using ($value) {
+      margin: -$value;
+    }
+  }
+
+  .-mx {
+    @include options($spacing, $props...) using ($value) {
+      margin-right: -$value;
+      margin-left: -$value;
+    }
+  }
+
+  .-my {
+    @include options($spacing, $props...) using ($value) {
+      margin-bottom: -$value;
+      margin-top: -$value;
+    }
+  }
+
+  .-mt {
+    @include options($spacing, $props...) using ($value) {
+      margin-top: -$value;
+    }
+  }
+
+  .-mr {
+    @include options($spacing, $props...) using ($value) {
+      margin-right: -$value;
+    }
+  }
+
+  .-mb {
+    @include options($spacing, $props...) using ($value) {
+      margin-bottom: -$value;
+    }
+  }
+
+  .-ml {
+    @include options($spacing, $props...) using ($value) {
+      margin-left: -$value;
+    }
+  }
+}
+
+$display: (
+  "block": block,
+  "inline-block": inline-block,
+  "inline": inline,
+  "flex": flex,
+  "inline-flex": inline-flex,
+  "grid": grid,
+  "inline-grid": inline-grid,
+  "hidden": none,
+) !default;
+
+@include options($display, "responsive") using ($value) {
+  display: $value;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.rounded {
+  border-radius: 1.75rem;
+}
