@@ -34,13 +34,13 @@ $colors: (
 
 .color {
   @include options($colors, "responsive") using ($value) {
-    color: $value;
+    color: $value !important;
   }
 }
 
 .bg {
   @include options($colors, "responsive") using ($value) {
-    background-color: $value;
+    background-color: $value !important;
   }
 }
 
@@ -51,9 +51,9 @@ $text: (
   "justify": justify,
 );
 
-.text {
+.text-align {
   @include options($text, "responsive") using ($value) {
-    text-align: $value;
+    text-align: $value !important;
   }
 }
 
@@ -81,7 +81,7 @@ $font-size: (
 }
 .text {
   @include options($font-size, "responsive") using ($value) {
-    font-size: $value;
+    font-size: $value !important;
   }
 }
 
@@ -92,7 +92,7 @@ $font-weight: (
 
 .font {
   @include options($font-weight, "responsive") using ($value) {
-    font-weight: $value;
+    font-weight: $value !important;
   }
 }
 
@@ -112,7 +112,10 @@ $spacing: (
   "11": 2.75rem,
   "12": 3rem,
   "14": 3rem,
+  "15": 3.5rem,
   "16": 4rem,
+  "18": 4.5rem,
+  "19": 4.75rem,
   "20": 5rem,
   "24": 6rem,
   "32": 8rem,
@@ -139,133 +142,133 @@ $margin: map.merge(
 @include variants("responsive") using ($props...) {
   .p {
     @include options($spacing, $props...) using ($value) {
-      padding: $value;
+      padding: $value !important;
     }
   }
 
   .px {
     @include options($spacing, $props...) using ($value) {
-      padding-right: $value;
-      padding-left: $value;
+      padding-right: $value !important;
+      padding-left: $value !important;
     }
   }
 
   .py {
     @include options($spacing, $props...) using ($value) {
-      padding-bottom: $value;
-      padding-top: $value;
+      padding-bottom: $value !important;
+      padding-top: $value !important;
     }
   }
 
   .pt {
     @include options($spacing, $props...) using ($value) {
-      padding-top: $value;
+      padding-top: $value !important;
     }
   }
 
   .pr {
     @include options($spacing, $props...) using ($value) {
-      padding-right: $value;
+      padding-right: $value !important;
     }
   }
 
   .pb {
     @include options($spacing, $props...) using ($value) {
-      padding-bottom: $value;
+      padding-bottom: $value !important;
     }
   }
 
   .pl {
     @include options($spacing, $props...) using ($value) {
-      padding-left: $value;
+      padding-left: $value !important;
     }
   }
 
   .m {
     @include options($margin, $props...) using ($value) {
-      margin: $value;
+      margin: $value !important;
     }
   }
 
   .mx {
     @include options($margin, $props...) using ($value) {
-      margin-right: $value;
-      margin-left: $value;
+      margin-right: $value !important;
+      margin-inline-start: $value !important;
     }
   }
 
   .my {
     @include options($margin, $props...) using ($value) {
-      margin-bottom: $value;
-      margin-top: $value;
+      margin-bottom: $value !important;
+      margin-top: $value !important;
     }
   }
 
   .mt {
     @include options($margin, $props...) using ($value) {
-      margin-top: $value;
+      margin-top: $value !important;
     }
   }
 
   .mr {
     @include options($margin, $props...) using ($value) {
-      margin-right: $value;
+      margin-right: $value !important;
     }
   }
 
   .mb {
     @include options($margin, $props...) using ($value) {
-      margin-bottom: $value;
+      margin-bottom: $value !important;
     }
   }
 
   .ml {
     @include options($margin, $props...) using ($value) {
-      margin-left: $value;
+      margin-inline-start: $value !important;
     }
   }
 
   .-m {
     @include options($spacing, $props...) using ($value) {
-      margin: -$value;
+      margin: -$value !important;
     }
   }
 
   .-mx {
     @include options($spacing, $props...) using ($value) {
-      margin-right: -$value;
-      margin-left: -$value;
+      margin-right: -$value !important;
+      margin-inline-start: -$value !important;
     }
   }
 
   .-my {
     @include options($spacing, $props...) using ($value) {
-      margin-bottom: -$value;
-      margin-top: -$value;
+      margin-bottom: -$value !important;
+      margin-top: -$value !important;
     }
   }
 
   .-mt {
     @include options($spacing, $props...) using ($value) {
-      margin-top: -$value;
+      margin-top: -$value !important;
     }
   }
 
   .-mr {
     @include options($spacing, $props...) using ($value) {
-      margin-right: -$value;
+      margin-right: -$value !important;
     }
   }
 
   .-mb {
     @include options($spacing, $props...) using ($value) {
-      margin-bottom: -$value;
+      margin-bottom: -$value !important;
     }
   }
 
   .-ml {
     @include options($spacing, $props...) using ($value) {
-      margin-left: -$value;
+      margin-inline-start: -$value !important;
     }
   }
 }
@@ -282,11 +285,26 @@ $display: (
 ) !default;
 
 @include options($display, "responsive") using ($value) {
-  display: $value;
+  display: $value !important;
 }
 
-.w-full {
-  width: 100%;
+$width: (
+  "full": 100%,
+  "auto": auto,
+) !default;
+
+.w {
+  @include options($width, "responsive") using ($value) {
+    width: $value !important;
+  }
+}
+
+$w-max: map.merge($width, $spacing);
+
+.w-max {
+  @include options($w-max, "responsive") using ($value) {
+    --max-width: $value !important;
+  }
 }
 
 .rounded {

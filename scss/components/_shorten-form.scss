@@ -5,4 +5,13 @@
   background-image: url(images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-position: right top;
+
+  @media (min-width: 90rem) {
+    background-image: url(images/bg-shorten-desktop.svg);
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 40px;
+    align-items: start;
+    --flow-y: 0;
+  }
 }

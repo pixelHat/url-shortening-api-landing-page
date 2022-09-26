@@ -1,8 +1,30 @@
 .call-to-action {
   position: relative;
+  text-align: center;
+  @media (min-width: 90rem) {
+    padding-top: var(--spacing-19);
+  }
   .image {
     width: 120%;
     position: relative;
     right: -10%;
+    @media (min-width: 90rem) {
+      right: -20%;
+    }
+  }
+  .container {
+    @media (min-width: 90rem) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      text-align: left;
+      --flow-y: var(--spacing-1);
+    }
+  }
+  .button[data-type="get-started"] {
+    --flow-y: var(--spacing-8);
+    @media (min-width: 90rem) {
+      --flow-y: var(--spacing-10);
+    }
   }
 }

@@ -14,7 +14,7 @@
           <li class="item">Features</li>
           <li class="item">Pricing</li>
           <li class="item">Resources</li>
-          <li class="ml-auto">
+          <li class="item ml-auto">
             <a>Login</a>
           </li>
           <li class="ml-9">
@@ -22,7 +22,7 @@
           </li>
         </ul>
         <ul
-          class="navbar-mobile text-center flow"
+          class="navbar-mobile text-align-center flow"
           style="--flow-y: var(--spacing-7)"
           id="navbar-mobile"
         >
@@ -61,66 +61,42 @@
         class="call-to-action bg-white flow pb-40"
         style="--flow-y: var(--spacing-10)"
       >
-        <section class="image wrapper">
-          <img src="images/illustration-working.svg" />
-        </section>
-        <section class="content text-center wrapper">
-          <div class="flow">
-            <h2 class="text-5xl color-very-darkblue">
-              More than just shorter links
-            </h2>
-            <p>
-              Build your brand’s recognition and get detailed insights on how
-              your links are performing.
-            </p>
-            <a
-              class="button rounded color-white bg-cyan"
-              style="--flow-y: var(--spacing-8)"
-              >Get Started</a
-            >
-          </div>
-        </section>
+        <div class="wrapper container">
+          <section class="image">
+            <img src="images/illustration-working.svg" />
+          </section>
+          <section class="content wrapper">
+            <div class="flow">
+              <h2 class="text-5xl lg:text-6xl color-very-darkblue">
+                More than just shorter links
+              </h2>
+              <p class="lg:text-xl">
+                Build your brand’s recognition and get detailed insights on how
+                your links are performing.
+              </p>
+              <a class="button rounded" data-type="get-started">Get Started</a>
+            </div>
+          </section>
+        </div>
       </section>
 
       <section class="bg-half">
-        <section class="shorten-form wrapper flow">
+        <section class="shorten-form wrapper flow" data-shorten-form>
           <div class="l-stack flow" style="--flow-y: var(--spacing-1)">
-            <input
-              class="text-input error"
-              placeholder="Shorten a link here..."
-            />
-            <small class="text-input--error">Please add a link</small>
+            <input class="text-input" placeholder="Shorten a link here..." />
+            <small class="text-input--error hidden" data-error
+              >Please add a link</small
+            >
           </div>
           <button class="button w-full">Shorten It!</button>
         </section>
       </section>
 
-      <ul class="wrapper flow">
-        <li class="shorten-card">
-          <div class="container">
-            <span class="raw">https://www.frontendmentor.io</span>
-          </div>
-          <hr class="divider" />
-          <div class="container flow">
-            <a class="url" href="#">https://rel.ink/k4lKyk</a>
-            <button class="button w-full">Copy</button>
-          </div>
-        </li>
-        <li class="shorten-card">
-          <div class="container">
-            <span class="raw">https://twitter.com/frontendmentor</span>
-          </div>
-          <hr class="divider" />
-          <div class="container flow">
-            <a class="url" href="#">https://rel.ink/gxOXp9</a>
-            <button class="button w-full" data-active>Copied!</button>
-          </div>
-        </li>
-      </ul>
+      <ul class="shorten-cards wrapper mt-6" data-shorten-cards></ul>
 
-      <section class="advanced-statistics flow wrapper text-center mt-20">
+      <section class="advanced-statistics flow wrapper text-align-center mt-20">
         <h2 class="title">Advanced Statistics</h2>
-        <p class="description">
+        <p class="description mt-4 lg:mt-5">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
@@ -161,14 +137,14 @@
       </section>
 
       <section class="hero flow bg-dark-violet mt-20">
-        <h2 class="font-3xl color-white">Boost your links today</h2>
-        <a class="button rounded">Get Started</a>
+        <h2 class="text-3xl lg:text-5xl color-white">Boost your links today</h2>
+        <a class="button rounded mt-8">Get Started</a>
       </section>
     </main>
 
     <footer class="footer bg-black py-14">
       <ul class="footer-links">
-        <li class="text-center">
+        <li class="logo">
           <svg
             class="color-white"
             xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +182,7 @@
             <li class="item">Contact</li>
           </ul>
         </li>
-        <li class="big-spacing">
+        <li class="social big-spacing">
           <ul class="horizontal-list color-white">
             <li class="item">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">

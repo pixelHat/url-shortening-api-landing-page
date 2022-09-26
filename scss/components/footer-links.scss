@@ -1,8 +1,28 @@
 .footer-links {
+  > .logo {
+    text-align: center;
+  }
   > .small-spacing {
     margin-block-start: var(--spacing-10);
   }
   > .big-spacing {
     margin-block-start: var(--spacing-12);
+  }
+
+  @media (min-width: 90rem) {
+    display: flex;
+    justify-content: center;
+    > * {
+      flex-grow: 2;
+    }
+    > :first-child {
+      flex-grow: 3;
+    }
+    > .small-spacing {
+      margin-block-start: 0;
+    }
+    > .big-spacing {
+      margin-block-start: 0;
+    }
   }
 }

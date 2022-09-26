@@ -1,7 +1,8 @@
 .bg-half {
-  background-image: linear-gradient(
-    to bottom,
-    var(--bg-half-clr-top, var(--clr-white)) 50%,
-    var(--bg-half-clr-bottom, var(--clr-light-gray)) 50%
-  );
+  transform: translateY(-50%);
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   var(--bg-half-clr-top, var(--clr-white)) 50%,
+  //   var(--bg-half-clr-bottom, var(--clr-light-gray)) 50%
+  // );
 }

@@ -1,9 +1,26 @@
+.shorten-cards {
+  > * + * {
+    margin-block-start: var(--spacing-6);
+  }
+
+  @media (min-width: 90rem) {
+    margin-block-start: var(--spacing-4);
+  }
+}
+
 .shorten-card {
-  --flow-y: var(--spacing-4);
   background-color: var(--clr-white);
 
-  > .container {
-    padding: var(--spacing-4);
+  @media (min-width: 90rem) {
+    display: flex;
+    align-items: center;
+    :nth-child(3) {
+      margin-left: auto;
+    }
+  }
+
+  > .divider {
+    margin-block: var(--spacing-4);
   }
 
   .raw {
@@ -14,13 +31,20 @@
     color: var(--clr-very-darkblue);
   }
 
-  .url {
+  > .url {
     color: var(--clr-cyan);
     display: block;
     padding: var(--card-padding);
   }
 
-  .copy-button {
-    display: block;
+  > .button {
+    margin-block-start: var(--spacing-4);
+    width: 100%;
+    @media (min-width: 90rem) {
+      margin-block-start: var(--spacing-0);
+      margin-inline-start: var(--spacing-6);
+      --padding-x: 0;
+      width: 120px;
+    }
   }
 }

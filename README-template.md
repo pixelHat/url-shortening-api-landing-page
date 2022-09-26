@@ -92,6 +92,9 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - half background instead of transform or absolute
 - flow utilitie: flow seems to be a good utility, but its easy to overuse it.
 - css properties
+  - it's a good way to work with variables.
+  - it's good to create container components.
+  - it's not good if you have a design that does not have a spacing pallet.
 
 ### Continued development
 

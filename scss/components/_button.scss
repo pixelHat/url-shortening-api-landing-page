@@ -1,12 +1,15 @@
 .button {
+  --_padding-y: var(--padding-y, var(--spacing-3));
+  --_padding-x: var(--padding-x, var(--spacing-10));
   border: 0;
-  padding: var(--spacing-3) var(--spacing-10) var(--spacing-3);
+  padding: var(--_padding-y) var(--_padding-x);
   border-radius: 5px;
   background-color: var(--clr-cyan);
   color: var(--clr-white);
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  transition: all 100ms ease-in;
 
   &:hover {
     background-color: var(--clr-light-cyan);

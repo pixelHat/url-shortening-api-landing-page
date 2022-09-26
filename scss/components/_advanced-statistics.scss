@@ -3,9 +3,64 @@
     font-size: var(--fs-3xl);
     color: var(--clr-very-darkblue);
   }
+  > .description {
+    max-width: 55ch;
+    margin-inline: auto;
+  }
   &-cards {
+    --card-offset: var(--spacing-8);
+    @media (min-width: 90rem) {
+      display: flex;
+      > * + * {
+        margin-inline-start: var(--spacing-6);
+      }
+      padding-block-end: calc(var(--card-offset) * 2);
+    }
     > * {
       margin-block-start: var(--spacing-24);
+    }
+    > .card {
+      position: relative;
+      &:not(:last-child) {
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 10px;
+          height: 100%;
+          background-color: var(--clr-cyan);
+          z-index: -1;
+          top: var(--spacing-24);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @media (min-width: 90rem) {
+          &::before {
+            left: 100%;
+            width: var(--spacing-24);
+            height: 10px;
+            transform: unset;
+          }
+          &:nth-child(1) {
+            &::before {
+              top: 50%;
+            }
+          }
+          &:nth-child(2) {
+            &::before {
+              top: calc(50% - var(--card-offset));
+            }
+          }
+        }
+      }
+      @media (min-width: 90rem) {
+        &:nth-child(2) {
+          transform: translateY(var(--card-offset));
+        }
+        &:nth-child(3) {
+          transform: translateY(calc(var(--card-offset) * 2));
+        }
+      }
     }
   }
 }
