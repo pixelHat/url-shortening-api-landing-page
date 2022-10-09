@@ -1,22 +1,26 @@
-# Frontend Mentor - Shortly URL shortening API Challenge
+# Frontend Mentor - Shortly URL shortening API Challenge solution
 
-![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this landing page, integrate with the [shrtcode API](https://app.shrtco.de/) and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - Shorten any valid URL
@@ -25,72 +29,154 @@ Your users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./public/readme/screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [Add solution URL here](https://github.com/pixelHat/url-shortening-api-landing-page)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+I started this challenge to work in a different way than usual. My biggest idea was to think outside of the box.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+So, first I read a lot about some patterns/architecture to get some ideas. I started reading about some architecture:
 
-## Building your project
+- [CUBE CSS](https://cube.fyi/)
+- [RSCSS](https://ricostacruz.com/rscss/)
+- [BEM](https://en.bem.info/)
+- [SMACSS](http://smacss.com/)
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+And a few articles:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- [Challenging CSS Best Practices](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/)
+- [The Road To Reusable HTML Components](https://www.smashingmagazine.com/2012/10/road-reusable-html-components/)
+- [CSS Variable Secrets](https://www.youtube.com/watch?v=ZuZizqDF4q8)
 
-## Deploying your project
+I decided to use only SASS and Vite as frameworks because it's a small and experimental project.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+### Built with
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- Vite
+- Mobile-first workflow
+- Vanilla JS
+- SASS
+- CSS custom properties
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### What I learned
 
-## Create a custom `README.md`
+My first idea to solve the background problem was to use a negative margin.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+![half-background](./public/readme/half-background.png)
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+.container {
+  --height: 200px;
+  height: var(--height);
+  margin-inline-start: calc(var(--height) / 2);
+}
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+The biggest issue with this strategy is that we must have a fixed `height` which isn't a good practice.
 
-## Submitting your solution
+The second idea was to use the `transform` property.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```css
+.container {
+  transform: translateY(-50%);
+}
+```
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+For this strategy, I don't need to specify a `height`. However, the `translateY` doesn't pull the siblings' elements. So, I can't easily control the margins between these elements.
 
-## Sharing your solution
+A better option was to use the `linear-gradient` property to create a half-background.
 
-There are multiple places you can share your solution:
+```css
+.bg-half {
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-half-clr-top, var(--clr-white)) 50%,
+    var(--bg-half-clr-bottom, var(--clr-light-gray)) 50%
+  );
+}
+```
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+I used css custom properties to create a small design token system, instead of SASS variables, and I really like it. Of course, we can use SASS to generate it.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+```scss
+$colors: (
+  "light-cyan": hsl(180, 56%, 75%),
+  "cyan": hsl(180, 66%, 49%),
+  "dark-violet": hsl(257, 27%, 26%),
+  "gray": hsl(0, 0%, 75%),
+  "light-gray": hsl(0, 0%, 95%),
+  "grayish-violet": hsl(257, 8%, 63%),
+  "very-darkblue": hsl(255, 11%, 21%),
+  "very-dark-violet": hsl(260, 8%, 14%),
+  "red": hsl(0, 87%, 67%),
+  "white": hsl(0, 0%, 100%, 1),
+  "black": hsl(257, 8%, 14%),
+);
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+:root {
+  @each $key, $value in $colors {
+    --clr-#{$key}: #{$value};
+  }
+}
+```
 
-## Got feedback for us?
+Even though it's easy to use SASS to create these variables, I would use a tool for a future project. Something like [Token CSS](https://tokencss.com/) or even [Tailwind](https://tailwindcss.com/).
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+Also, I have used css custom properties to create some reusable utilities like the flow class.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+```css
+.flow > * + * {
+  margin-block-start: var(--flow-y, var(--spacing-4));
+}
+```
 
-**Have fun building!** 🚀
+I have learned that we should use `flex` for 1d containers and `grid` for 2d containers. However, it's much easier to control the children's size through `grid` than `flex`.
+
+When we are using grid, we can define, at the parent element, what is the size of each child.
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  column-gap: 40px;
+  align-items: start;
+}
+```
+
+In this example, the first child has 80% of the size and the second has 20%.
+
+Now, using flex, we must style this on the children's style.
+
+```css
+.flex {
+  display: flex;
+  align-items: start;
+}
+.flex > *:first-child {
+  width: 80%;
+}
+.flex > *:last-child {
+  width: 20%;
+}
+```
+
+I prefer the first one because the component should be responsive to its parent (container).
+
+At the beginning of my carrer, I really enjoyed vanilla Javascript. However, nowadays I don't have more patience to use it. Next time I'm going to use a small library like alpine.
+
+### Continued development
+
+It would be much easier to make it using only BEM because it's a simple application. Though I end up doing some over-engineering, it was fun to work differently.
+
+The next step is to get a multi-page application where I'm going to be able to see how a modular architecture can be helpfull.
+
+## Author
+
+- Frontend Mentor - [@pixelhat](https://www.frontendmentor.io/profile/pixelHat)
