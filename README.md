@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/pixelHat/url-shortening-api-landing-page)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/pixelHat/url-shortening-api-landing-page](https://github.com/pixelHat/url-shortening-api-landing-page)
+- Live Site URL: [https://pixelhat.github.io/url-shortening-api-landing-page/](https://pixelhat.github.io/url-shortening-api-landing-page/)
 
 ## My process
 
