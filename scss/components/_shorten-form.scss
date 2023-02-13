@@ -2,12 +2,12 @@
   background-color: var(--clr-very-darkblue);
   padding: var(--spacing-6);
   border-radius: 10px;
-  background-image: url(images/bg-shorten-mobile.svg);
+  background-image: url(/images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-position: right top;
 
   @media (min-width: 90rem) {
-    background-image: url(images/bg-shorten-desktop.svg);
+    background-image: url(/images/bg-shorten-desktop.svg);
     display: grid;
     grid-template-columns: 4fr 1fr;
     column-gap: 40px;
